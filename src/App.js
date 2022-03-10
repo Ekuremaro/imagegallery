@@ -20,7 +20,7 @@ function App() {
   }, [term]);
 
   return (
-    <div className=" container mx-auto">
+    <div className=" container px-1 mx-auto">
       <ImageSearch searchText={(text) => setTerm(text)} />
 
       {!isLoading && images.length === 0 && (
@@ -31,7 +31,7 @@ function App() {
       {isLoading ? (
         <h1 className=" text-6xl text-center mx-auto mt-32">Loading...</h1>
       ) : (
-        <div className=" grid grid-cols-3 gap-4">
+        <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
           {images.map((image) => (
             <ImageCard key={image.id} image={image} />
           ))}
